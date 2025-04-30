@@ -73,5 +73,17 @@
     hyprland hyprland-protocols hypridle hyprland
   ];
 
-  system.stateVersion = "24.05";
+  services.flatpak.enable = true;
+
+  # Optional aber empfohlen: Flathub als Remote hinzufügen
+  systemd.user.services.flatpak-setup = {
+    description = "Flathub Remote hinzufügen";
+    wantedBy = [ "default.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${pkgs.flatpak}/bin/flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo";
+      RemainAfterExit = true;
+    };
+  };
+  system.stateVersion = "24.11";
 }
