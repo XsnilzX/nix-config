@@ -10,7 +10,14 @@
     # deine Wunschprogramme später hier eintragen
     ghostty zed-editor flatpak flatseal
     # Zen Browser
-    inputs.zen-browser.packages.${pkgs.system}.twilight
+    inputs.zen-browser.packages.${pkgs.system}.twilight  {
+     policies = {
+         DisableAppUpdate = true;
+         DisableTelemetry = true;
+         DisablePocket = true;
+         DisableSearchEngineInstall = true;
+         # find more options here: https://mozilla.github.io/policy-templates/
+     };
     # hyprland stuff
     waybar rofi-wayland dunst hyprpaper wlogout cliphist
   ];
