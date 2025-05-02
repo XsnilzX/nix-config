@@ -16,6 +16,10 @@
         url = "github:XsnilzX/hyprland-dotfiles";
         flake = false;
       };
+    zen-browser = {
+        url = "github:0xc000022070/zen-browser-flake";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }:
@@ -26,7 +30,7 @@
         inherit system;
         specialArgs = {
           inherit self;
-          inherit (self.inputs) dotfiles;
+          inherit (self.inputs) dotfiles zen-browser;
         };
 
         modules = [

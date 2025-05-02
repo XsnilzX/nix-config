@@ -9,6 +9,8 @@
   home.packages = with pkgs; [
     # deine Wunschprogramme später hier eintragen
     ghostty zed-editor flatpak flatseal
+    # Zen Browser
+    inputs.zen-browser.packages.${pkgs.system}.twilight
     # hyprland stuff
     waybar rofi-wayland dunst hyprpaper wlogout cliphist
   ];
