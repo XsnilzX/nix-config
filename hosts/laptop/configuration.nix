@@ -21,7 +21,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Aktiviert btrfs Tools
-  programs.btrfs-progs.enable = true;
+  #programs.btrfs-progs.enable = true;
 
   # LUKS Verschlüsselung für Root und Swap
   boot.initrd.luks.devices."luks-root" = {
