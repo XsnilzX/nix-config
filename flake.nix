@@ -9,7 +9,7 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware";
     # Hyprland dotfiles
-    hyperland-dotfiles = {
+    hyprland-dotfiles = {
         url = "github:XsnilzX/hyprland-dotfiles";
         flake = false;
       };
