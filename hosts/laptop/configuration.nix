@@ -7,6 +7,7 @@ in
 {
   imports = [
     inputs.home-manager.nixosModules.default
+    ./hardware-configuration.nix
   ];
 
   # Initiale Kernelmodule für das Initramfs
