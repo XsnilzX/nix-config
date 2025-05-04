@@ -41,7 +41,7 @@
         };
 
         luks-swap = {
-          size = "remaining";  # nimmt den Rest der Disk
+          size = "100%";
           content = {
             type = "luks";
             name = "cryptswap";
