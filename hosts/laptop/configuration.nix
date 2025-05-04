@@ -1,5 +1,9 @@
 { config, pkgs, lib, zen-browser, inputs, ... }:
 
+let
+  cryptroot = "/dev/mapper/cryptroot";
+  cryptswap = "/dev/mapper/cryptswap";
+in
 {
   imports = [
     inputs.home-manager.nixosModules.default
@@ -29,48 +33,50 @@
 
   # LUKS Verschlüsselung für Root und Swap
   boot.initrd.luks.devices."luks-root" = {
-    device = "/dev/disk/by-label/nixos";
-    preLVM = true;
+      device = "/dev/disk/by-uuid/a9dc5d16-b8d6-457c-b9ae-85e3387d810a";
+      preLVM = true;
+      name = "cryptroot";
   };
   boot.initrd.luks.devices."luks-swap" = {
-    device = "/dev/disk/by-label/swap";
-    preLVM = true;
+      device = "/dev/disk/by-uuid/a16a0d46-26cd-4a29-8642-e9882233fff9";
+      preLVM = true;
+      name = "cryptswap";
   };
 
   # Hibernate Support (Swap-Resume)
-  boot.resumeDevice = "/dev/mapper/cryptswap";
-  boot.kernelParams = [ "resume=/dev/mapper/cryptswap" ];
+  boot.resumeDevice = cryptswap;
+  boot.kernelParams = [ "resume=${cryptswap}" ];
 
   # Swap Device Definition
   swapDevices = [
-    { device = "/dev/mapper/cryptswap"; }
+    { device = cryptswap; }
   ];
 
   # Btrfs mit Subvolumes + optimierten SSD-Optionen
   fileSystems."/" = {
-    device = "/dev/mapper/cryptroot";
+    device = cryptroot;
     fsType = "btrfs";
     options = [ "subvol=@" "noatime" "compress=zstd:5" "ssd" "discard=async" "space_cache=v2" ];
   };
   fileSystems."/home" = {
-    device = "/dev/mapper/cryptroot";
+    device = cryptroot;
     fsType = "btrfs";
     options = [ "subvol=@home" "noatime" "compress=zstd:5" "ssd" "discard=async" "space_cache=v2" ];
   };
   fileSystems."/nix" = {
-    device = "/dev/mapper/cryptroot";
+    device = cryptroot;
     fsType = "btrfs";
     options = [ "subvol=@nix" "noatime" "compress=zstd:5" "ssd" "discard=async" "space_cache=v2" ];
   };
   fileSystems."/var/log" = {
-    device = "/dev/mapper/cryptroot";
+    device = cryptroot;
     fsType = "btrfs";
     options = [ "subvol=@log" "noatime" "compress=zstd:5" "ssd" "discard=async" "space_cache=v2" ];
   };
 
   # EFI Boot-Partition
   fileSystems."/boot" = {
-    device = "/dev/disk/by-label/boot";
+    device = "/dev/disk/by-uuid/FD9B-5E8F";
     fsType = "vfat";
   };
 
