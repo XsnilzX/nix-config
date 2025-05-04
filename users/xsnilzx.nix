@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     # deine Wunschprogramme später hier eintragen
-    ghostty zed-editor flatpak flatseal vscodium firefox discord btop eza bat bottom
+    ghostty zed-editor flatpak vscodium firefox discord btop eza bat bottom
     # Zen Browser
     inputs.zen-browser.packages.${pkgs.system}.twilight  {
      policies = {
