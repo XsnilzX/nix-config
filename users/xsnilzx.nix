@@ -1,4 +1,4 @@
-{ pkgs, hyprland-dotfiles, ... }:
+{ pkgs, ... }:
 
 let
   username = "xsnilzx";

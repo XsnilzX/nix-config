@@ -1,4 +1,4 @@
-{ config, pkgs, lib, zen-browser, hyprland-dotfiles, inputs, ... }:
+{ config, pkgs, lib, zen-browser, inputs, ... }:
 
 {
   imports = [
