@@ -154,16 +154,6 @@
     # Hyprland-Tools
     #hyprland-protocols
     hypridle
-    # Zen Browser
-    zen-browser.packages.${pkgs.system}.twilight  {
-     policies = {
-         DisableAppUpdate = true;
-         DisableTelemetry = true;
-         DisablePocket = true;
-         DisableSearchEngineInstall = true;
-         # find more options here: https://mozilla.github.io/policy-templates/
-     };
-    }
   ];
 
   # Flatpak + Flathub Setup
