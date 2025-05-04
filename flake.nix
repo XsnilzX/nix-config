@@ -28,7 +28,7 @@
         inherit system;
         specialArgs = {
           inherit self;
-          inherit (self.inputs) hyprland-dotfiles zen-browser;
+          inherit (self.inputs) hyprland-dotfiles zen-browser home-manager;
         };
 
         modules = [
