@@ -79,13 +79,13 @@
   services.xserver.displayManager.sessionPackages = [ pkgs.hyprland ];
 
   # Benutzerkonfiguration
+
+  home-manager.users.xsnilzx = import ../../users/xsnilzx.nix;
   users.users.xsnilzx = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
     shell = pkgs.zsh;
   };
-
-  home-manager.users.xsnilzx = import ../../users/xsnilzx.nix;
 
   # Netzwerk & Audio
   networking.networkmanager.enable = true;
