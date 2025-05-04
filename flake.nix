@@ -24,11 +24,9 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
     in {
-      nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
+      nixosConfigurations.laptop = lib.nixosSystem {
         inherit system;
-        specialArgs = {
-          inherit inputs;
-        };
+        specialArgs = { inherit inputs; };
 
         modules = [
           ./hosts/laptop/configuration.nix
