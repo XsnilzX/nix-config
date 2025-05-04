@@ -92,7 +92,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs; };
-    user = {
+    users = {
       "xsnilzx" = import ../../users/xsnilzx.nix;
     };
   };
