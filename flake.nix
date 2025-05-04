@@ -32,6 +32,7 @@
           ./hosts/laptop/configuration.nix
           nixos-hardware.nixosModules.common-cpu-amd
           nixos-hardware.nixosModules.common-gpu-amd
+          inputs.home-manager.nixosModules.default
 
           # Aktiviert unfreie Software systemweit
           ({ config, ... }: {
