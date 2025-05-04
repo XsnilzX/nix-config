@@ -140,7 +140,7 @@
 
   # Nützliche Tools
   environment.systemPackages = with pkgs; [
-    nano git neovim zsh wget curl neofetch tlp
+    nano git neovim zsh wget curl neofetch tlp btrfs-progs
     # Hyprland-Tools
     hyprland hyprland-protocols hypridle
     # Zen Browser
