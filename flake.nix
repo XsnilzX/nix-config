@@ -9,10 +9,10 @@
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # Hyprland dotfiles
-    hyprland-dotfiles = {
-        url = "github:XsnilzX/hyprland-dotfiles";
-        flake = false;
-      };
+    #hyprland-dotfiles = {
+    #    url = "github:XsnilzX/hyprland-dotfiles";
+    #    flake = false;
+    #  };
     zen-browser = {
         url = "github:0xc000022070/zen-browser-flake";
         inputs.nixpkgs.follows = "nixpkgs";
@@ -25,7 +25,6 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
         extraSpecialArgs = {
           inherit inputs;
         };
