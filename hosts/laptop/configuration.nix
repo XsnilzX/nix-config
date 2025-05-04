@@ -84,6 +84,15 @@
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
   };
 
+  home-manager.nixosModules.home-manager
+  {
+    home-manager.useGlobalPkgs = true;
+    home-manager.useUserPackages = true;
+    home-manager.users.xsnilzx = import ./users/xsnilzx.nix {
+      inherit pkgs hyprland-dotfiles;
+    };
+  }
+
   # Netzwerk & Audio
   networking.networkmanager.enable = true;
   hardware.pulseaudio.enable = false;
