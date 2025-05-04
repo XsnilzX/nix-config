@@ -13,11 +13,11 @@ in
   # Programme aktivieren
   programs.zsh = {
     enable = true;
-    ohMyZsh = {
-      enable = true;
-      plugins = [ "git" ];
-      theme = "xiong-chiamiov-plus";
-    };
+    #ohMyZsh = {
+    #  enable = true;
+    #  plugins = [ "git" ];
+    #  theme = "xiong-chiamiov-plus";
+    #};
     shellAliases = {
       ls = "eza";
       cat = "bat";
