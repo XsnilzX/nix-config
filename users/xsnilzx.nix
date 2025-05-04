@@ -15,12 +15,14 @@ in
     enable = true;
     ohMyZsh = {
       enable = true;
-      plugins = [ "git" "zsh-autosuggestions" ];
+      plugins = [ "git" ];
       theme = "xiong-chiamiov-plus";
     };
     shellAliases = {
       ls = "eza";
       cat = "bat";
+      ll = "ls -l";
+      gs = "git status";
     };
   };
 
