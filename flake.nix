@@ -39,7 +39,9 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.xsnilzx = import ./users/xsnilzx.nix;
+            home-manager.users.xsnilzx = import ./users/xsnilzx.nix {
+              inherit hyprland-dotfiles;
+            };
           }
 
           # Aktiviert unfreie Software systemweit
