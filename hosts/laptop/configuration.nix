@@ -83,13 +83,6 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
   };
-  home-manager = {
-    #extraSpecialArgs = { inherit inputs; };
-    users = {
-      xsnilzx = import ../../users/xsnilzx.nix;
-    };
-
-  };
 
   # Netzwerk & Audio
   networking.networkmanager.enable = true;

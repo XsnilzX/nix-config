@@ -36,7 +36,6 @@ in
   #programs.rofi.enable = true;
   #programs.waybar.enable = true;
   #programs.dunst.enable = true;
-  programs.home-manager.enable = true;
 
   # Pakete installieren
   home.packages = with pkgs; [
