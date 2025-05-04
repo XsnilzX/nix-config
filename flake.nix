@@ -38,6 +38,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.users.xsnilzx = import ./users/xsnilzx.nix;
           }
 
           # Aktiviert unfreie Software systemweit
