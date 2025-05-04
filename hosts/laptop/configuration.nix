@@ -88,7 +88,7 @@
   home-manager.users.xsnilzx = import ../../users/xsnilzx.nix;
 
   # Netzwerk & Audio
-  services.networkmanager.enable = true;
+  networking.networkmanager.enable = true;
   hardware.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
