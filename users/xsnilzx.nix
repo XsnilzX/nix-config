@@ -29,12 +29,12 @@
   ];
 
   # Ganze Ordner einbinden (inkl. Scripts, Styles usw.)
-  xdg.configFile."hypr".source = "${dotfiles}/dotfiles/hypr";
-  xdg.configFile."waybar".source = "${dotfiles}/dotfiles/waybar";
-  xdg.configFile."rofi".source = "${dotfiles}/dotfiles/rofi";
-  xdg.configFile."dunst".source = "${dotfiles}/dotfiles/dunst";
-  xdg.configFile."wlogout".source = "${dotfiles}/dotfiles/wlogout";
-  xdg.configFile."ghostty".source = "${dotfiles}/dotfiles/ghostty";
+  xdg.configFile."hypr".source = "${hyperland-dotfiles}/dotfiles/hypr";
+  xdg.configFile."waybar".source = "${hyperland-dotfiles}/dotfiles/waybar";
+  xdg.configFile."rofi".source = "${hyperland-dotfiles}/dotfiles/rofi";
+  xdg.configFile."dunst".source = "${hyperland-dotfiles}/dotfiles/dunst";
+  xdg.configFile."wlogout".source = "${hyperland-dotfiles}/dotfiles/wlogout";
+  xdg.configFile."ghostty".source = "${hyperland-dotfiles}/dotfiles/ghostty";
 
   # Optional: Scripts nach ~/bin oder ~/.local/bin
   # home.file.".local/bin".source = "${dotfiles}/dotfiles/scripts";
