@@ -27,10 +27,8 @@ in
   programs.git = {
     enable = true;
     # Additional configuration options can be added here
-    user = {
-      email = "richard.hans.taesler@stud.uni-hannover.de";
-      name = "Richard Taesler";
-    };
+    userEmail = "richard.hans.taesler@stud.uni-hannover.de";
+    userName = "Richard Taesler";
   };
 
   #programs.rofi.enable = true;
