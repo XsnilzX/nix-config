@@ -9,16 +9,6 @@
   home.packages = with pkgs; [
     # deine Wunschprogramme später hier eintragen
     ghostty zed-editor flatpak vscodium firefox discord btop eza bat bottom
-    # Zen Browser
-    zen-browser.packages.${pkgs.system}.twilight  {
-     policies = {
-         DisableAppUpdate = true;
-         DisableTelemetry = true;
-         DisablePocket = true;
-         DisableSearchEngineInstall = true;
-         # find more options here: https://mozilla.github.io/policy-templates/
-     };
-    }
     # hyprland stuff
     waybar
     rofi
