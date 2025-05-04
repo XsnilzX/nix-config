@@ -93,6 +93,8 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
   };
+  security.sudo.enable = true;
+  security.sudo.wheelNeedsPassword = true;
 
   home-manager = {
     useGlobalPkgs = true;
