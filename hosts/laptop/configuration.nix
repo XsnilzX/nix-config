@@ -93,7 +93,7 @@
     useUserPackages = true;
     extraSpecialArgs = {inherit inputs; };
     user = {
-      xsnilzx = import ../../users/xsnilzx.nix;
+      "xsnilzx" = import ../../users/xsnilzx.nix;
     };
   };
 
