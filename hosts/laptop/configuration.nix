@@ -33,12 +33,12 @@ in
 
   # LUKS Verschlüsselung für Root und Swap
   boot.initrd.luks.devices."cryptroot" = {
-      device = "/dev/disk/by-uuid/a9dc5d16-b8d6-457c-b9ae-85e3387d810a";
+      device = "/dev/disk/by-uuid/bbc5858e-96c5-4bdd-87aa-cb4184a54f95";
       preLVM = true;
       name = "cryptroot";
   };
   boot.initrd.luks.devices."cryptswap" = {
-      device = "/dev/disk/by-uuid/a16a0d46-26cd-4a29-8642-e9882233fff9";
+      device = "/dev/disk/by-uuid/45550035-c24a-4646-b5ca-5ed81969eb9f";
       preLVM = true;
       name = "cryptswap";
   };
@@ -82,11 +82,11 @@ in
 
   # Grafische Oberfläche: Hyprland + SDDM
   services.xserver.enable = true;
-  services.xserver.libinput.enable = true; # Touchpad & Eingabegeräte (empfohlen für Laptops)
+  services.libinput.enable = true; # Touchpad & Eingabegeräte (empfohlen für Laptops)
   programs.hyprland.enable = true;
   services.displayManager.sddm.enable = true;
   services.displayManager.defaultSession = "hyprland";
-  services.xserver.displayManager.sessionPackages = [ pkgs.hyprland ];
+  services.displayManager.sessionPackages = [ pkgs.hyprland ];
 
   # Benutzerkonfiguration
   users.users.xsnilzx = {
@@ -105,7 +105,7 @@ in
 
   # Netzwerk & Audio
   networking.networkmanager.enable = true;
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     audio.enable = true;
