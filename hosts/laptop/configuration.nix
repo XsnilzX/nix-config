@@ -29,19 +29,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Aktiviert btrfs Tools
-  #programs.btrfs-progs.enable = true;
-
-  # LUKS Verschlüsselung für Root und Swap
-  boot.initrd.luks.devices."cryptroot" = {
-      device = "/dev/disk/by-uuid/bbc5858e-96c5-4bdd-87aa-cb4184a54f95";
-      preLVM = true;
-      name = "cryptroot";
-  };
-  boot.initrd.luks.devices."cryptswap" = {
-      device = "/dev/disk/by-uuid/45550035-c24a-4646-b5ca-5ed81969eb9f";
-      preLVM = true;
-      name = "cryptswap";
-  };
+  #programs.btrfs-progs.enable = true
 
   # Hibernate Support (Swap-Resume)
   boot.resumeDevice = cryptswap;
