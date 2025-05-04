@@ -1,4 +1,4 @@
-{ config, pkgs, lib, zen-browser, inputs, ... }:
+{ config, pkgs, lib, zen-browser, ... }:
 
 {
   # Initiale Kernelmodule für das Initramfs
