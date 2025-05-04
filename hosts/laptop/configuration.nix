@@ -84,7 +84,7 @@
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
   };
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    #extraSpecialArgs = { inherit inputs; };
     users = {
       xsnilzx = import ../../users/xsnilzx.nix;
     };
