@@ -86,7 +86,6 @@
     shell = pkgs.zsh;
   };
 
-  programs.enable.zsh = true;
 
   # Netzwerk & Audio
   networking.networkmanager.enable = true;
