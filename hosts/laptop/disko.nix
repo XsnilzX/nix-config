@@ -17,7 +17,7 @@
         };
 
         luks-root = {
-          size = "914.5G";
+          size = "915G";
           content = {
             type = "luks";
             name = "cryptroot";
@@ -25,9 +25,16 @@
               type = "btrfs";
               subvolumes = {
                 "@".mountpoint = "/";
+                "@".mountOptions = [ "compress=zstd:5" "noatime" "ssd" "discard=async" "space_cache=v2 " ];
+
                 "@home".mountpoint = "/home";
+                "@home".mountOptions = [  "compress=zstd:5" "noatime" "ssd" "discard=async" "space_cache=v2 " ];
+
                 "@nix".mountpoint = "/nix";
+                "@nix".mountOptions = [  "compress=zstd:5" "noatime" "ssd" "discard=async" "space_cache=v2 " ];
+
                 "@log".mountpoint = "/var/log";
+                "@log".mountOptions = [  "compress=zstd:5" "noatime" "ssd" "discard=async" "space_cache=v2 " ];
               };
             };
           };
