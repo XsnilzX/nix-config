@@ -26,9 +26,8 @@
     in {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         inherit system;
-        specialArgs = {
-          inherit self;
-          inherit (self.inputs) hyprland-dotfiles zen-browser home-manager;
+        extraSpecialArgs = {
+          inherit inputs;
         };
 
         modules = [

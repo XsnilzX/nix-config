@@ -1,6 +1,10 @@
-{ config, pkgs, lib, home-manager, zen-browser, hyprland-dotfiles, ... }:
+{ config, pkgs, lib, zen-browser, hyprland-dotfiles, inputs, ... }:
 
 {
+  imports = [
+    inputs.home-manager.nixosModules.default
+  ];
+
   # Initiale Kernelmodule für das Initramfs
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
@@ -87,8 +91,9 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.xsnilzx = import ../../users/xsnilzx.nix {
-      inherit pkgs hyprland-dotfiles;
+    extraSpecialArgs = {inherit inputs; };
+    user = {
+      xsnilzx = import ../../users/xsnilzx.nix
     };
   };
 
