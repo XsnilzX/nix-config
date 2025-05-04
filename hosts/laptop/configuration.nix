@@ -84,7 +84,7 @@
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
   };
 
-  home-manager.nixosModules.home-manager = {
+  home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     users.xsnilzx = import ../../users/xsnilzx.nix {
