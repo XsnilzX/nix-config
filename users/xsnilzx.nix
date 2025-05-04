@@ -41,12 +41,12 @@ in
 
 
   # Ganze Ordner aus hyprland-dotfiles einbinden
-  xdg.configFile."hypr".source = "${hyprland-dotfiles}/dotfiles/hypr";
-  xdg.configFile."waybar".source = "${hyprland-dotfiles}/dotfiles/waybar";
-  xdg.configFile."rofi".source = "${hyprland-dotfiles}/dotfiles/rofi";
-  xdg.configFile."dunst".source = "${hyprland-dotfiles}/dotfiles/dunst";
-  xdg.configFile."wlogout".source = "${hyprland-dotfiles}/dotfiles/wlogout";
-  xdg.configFile."ghostty".source = "${hyprland-dotfiles}/dotfiles/ghostty";
+  #xdg.configFile."hypr".source = "${hyprland-dotfiles}/dotfiles/hypr";
+  #xdg.configFile."waybar".source = "${hyprland-dotfiles}/dotfiles/waybar";
+  #xdg.configFile."rofi".source = "${hyprland-dotfiles}/dotfiles/rofi";
+  #xdg.configFile."dunst".source = "${hyprland-dotfiles}/dotfiles/dunst";
+  #xdg.configFile."wlogout".source = "${hyprland-dotfiles}/dotfiles/wlogout";
+  #xdg.configFile."ghostty".source = "${hyprland-dotfiles}/dotfiles/ghostty";
 
   # Optional: falls du Scripts hast
   # home.file.".local/bin".source = "${hyprland-dotfiles}/dotfiles/scripts";
