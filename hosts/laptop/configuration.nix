@@ -85,9 +85,9 @@
   };
 
   home-manager.nixosModules.home-manager = {
-    home-manager.useGlobalPkgs = true;
-    home-manager.useUserPackages = true;
-    home-manager.users.xsnilzx = import ../../users/xsnilzx.nix {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.xsnilzx = import ../../users/xsnilzx.nix {
       inherit pkgs hyprland-dotfiles;
     };
   };
