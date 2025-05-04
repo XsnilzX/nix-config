@@ -39,6 +39,7 @@ in
 
   # Pakete installieren
   home.packages = with pkgs; [
+    git
     ghostty
     zed-editor
     vscodium
