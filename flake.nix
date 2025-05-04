@@ -7,10 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    disko = {
-      url = "github:nix-community/disko";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # Hyprland dotfiles
     #hyprland-dotfiles = {
@@ -34,7 +30,6 @@
 
         modules = [
           ./hosts/laptop/configuration.nix
-          ./hosts/laptop/disko.nix
           nixos-hardware.nixosModules.common-cpu-amd
           nixos-hardware.nixosModules.common-gpu-amd
           inputs.home-manager.nixosModules.default
