@@ -1,4 +1,4 @@
-{ config, pkgs, lib, zen-browser, ... }:
+{ config, pkgs, lib, zen-browser, hyprland-dotfiles, ... }:
 
 {
   # Initiale Kernelmodule für das Initramfs
