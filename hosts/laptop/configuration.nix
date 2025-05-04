@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # Importiere benutzerspezifische Konfigurationen
-  imports = [ ../../users/xsnilzx.nix ];
-
   # Initiale Kernelmodule für das Initramfs
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
@@ -87,6 +84,8 @@
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
     shell = pkgs.zsh;
   };
+
+  home-manager.users.xsnilzx = import ../../users/xsnilzx.nix;
 
   # Netzwerk & Audio
   services.network-manager.enable = true;
