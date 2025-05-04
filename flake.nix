@@ -19,7 +19,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, hyprland-dotfiles, zen-browser, ... }:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, hyprland-dotfiles, zen-browser, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
