@@ -19,7 +19,12 @@
          # find more options here: https://mozilla.github.io/policy-templates/
      };
     # hyprland stuff
-    waybar rofi-wayland dunst hyprpaper wlogout cliphist
+    waybar
+    rofi-wayland
+    dunst
+    hyprpaper
+    wlogout
+    cliphist
   ];
 
   # Ganze Ordner einbinden (inkl. Scripts, Styles usw.)
