@@ -33,11 +33,11 @@ in
   ];
 
   # Programme aktivieren
-  programs.zsh.enable = true;
-  programs.rofi.enable = true;
-  programs.waybar.enable = true;
-  programs.dunst.enable = true;
-  programs.home-manager.enable = true;
+  #programs.zsh.enable = true;
+  #programs.rofi.enable = true;
+  #programs.waybar.enable = true;
+  #programs.dunst.enable = true;
+  #programs.home-manager.enable = true;
 
   # Ganze Ordner aus hyprland-dotfiles einbinden
   xdg.configFile."hypr".source = "${hyprland-dotfiles}/dotfiles/hypr";
