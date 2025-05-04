@@ -1,4 +1,4 @@
-{ config, pkgs, hyprland-dotfiles, inputs, ... }:
+{ config, pkgs, hyprland-dotfiles, zen-browser, ... }:
 
 {
   home.username = "xsnilzx";
@@ -10,7 +10,7 @@
     # deine Wunschprogramme später hier eintragen
     ghostty zed-editor flatpak vscodium firefox discord btop eza bat bottom
     # Zen Browser
-    inputs.zen-browser.packages.${pkgs.system}.twilight  {
+    zen-browser.packages.${pkgs.system}.twilight  {
      policies = {
          DisableAppUpdate = true;
          DisableTelemetry = true;
