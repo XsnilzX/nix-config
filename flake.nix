@@ -40,7 +40,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.xsnilzx = import ./users/xsnilzx.nix {
-              inherit hyprland-dotfiles;
+              inherit pkgs hyprland-dotfiles;
             };
           }
 
