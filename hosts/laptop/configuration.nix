@@ -32,12 +32,12 @@ in
   #programs.btrfs-progs.enable = true;
 
   # LUKS Verschlüsselung für Root und Swap
-  boot.initrd.luks.devices."luks-root" = {
+  boot.initrd.luks.devices."cryptroot" = {
       device = "/dev/disk/by-uuid/a9dc5d16-b8d6-457c-b9ae-85e3387d810a";
       preLVM = true;
       name = "cryptroot";
   };
-  boot.initrd.luks.devices."luks-swap" = {
+  boot.initrd.luks.devices."cryptswap" = {
       device = "/dev/disk/by-uuid/a16a0d46-26cd-4a29-8642-e9882233fff9";
       preLVM = true;
       name = "cryptswap";
