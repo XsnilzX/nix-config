@@ -138,11 +138,12 @@ programs.zsh.enable = true;
   console.font = "Lat2-Terminus16";
   console.useXkbConfig = true;
 
+  programs.hyprland.enable = true;
   # Nützliche Tools
   environment.systemPackages = with pkgs; [
     nano git neovim zsh wget curl neofetch tlp btrfs-progs
     # Hyprland-Tools
-    hyprland hyprland-protocols hypridle
+    hyprland-protocols hypridle
     # Zen Browser
     zen-browser.packages.${pkgs.system}.twilight  {
      policies = {
