@@ -38,6 +38,11 @@
           nixos-hardware.nixosModules.common-cpu-amd
           nixos-hardware.nixosModules.common-gpu-amd
           home-manager.nixosModules.home-manager
+
+          # Aktiviert unfreie Software systemweit
+          ({ config, ... }: {
+            nixpkgs.config.allowUnfree = true;
+          })
         ];
       };
     };
