@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, hyprland-dotfiles, inputs, ... }:
 
 {
   home.username = "xsnilzx";
