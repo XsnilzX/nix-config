@@ -80,12 +80,12 @@
 
   # Benutzerkonfiguration
   home-manager.users.xsnilzx = import ../../users/xsnilzx.nix;
+  programs.zsh.enable = true;
   users.users.xsnilzx = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
     shell = pkgs.zsh;
   };
-programs.zsh.enable = true;
 
   # Netzwerk & Audio
   networking.networkmanager.enable = true;
