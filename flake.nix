@@ -25,7 +25,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
-        extraSpecialArgs = {
+        specialArgs = {
           inherit inputs;
         };
 
