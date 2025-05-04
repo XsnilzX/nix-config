@@ -25,7 +25,7 @@ Dies ist meine persönliche NixOS-Konfiguration für meinen Laptop. Sie basiert 
 ```bash
 git clone https://github.com/XsnilzX/nixconfig.git
 cd nixconfig
-nixos-install --flake .#laptop
+nixos-install --root /mnt --no-root-passwd --flake .#laptop
 ```
 
 ## 📝 Lizenz
