@@ -142,7 +142,8 @@
   environment.systemPackages = with pkgs; [
     nano git neovim zsh wget curl neofetch tlp btrfs-progs
     # Hyprland-Tools
-    hyprland-protocols hypridle
+    #hyprland-protocols
+    hypridle
     # Zen Browser
     zen-browser.packages.${pkgs.system}.twilight  {
      policies = {
