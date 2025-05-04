@@ -64,6 +64,7 @@ in
     btop
     eza
     bat
+    seafile-client
 
     # Hyprland Tools
     waybar
