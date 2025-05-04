@@ -18,6 +18,7 @@
          DisableSearchEngineInstall = true;
          # find more options here: https://mozilla.github.io/policy-templates/
      };
+    }
     # hyprland stuff
     waybar
     rofi
