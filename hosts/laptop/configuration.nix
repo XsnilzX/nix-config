@@ -14,7 +14,7 @@
   networking.hostName = "xsnilzx-lenovo-nix";
   time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
-  console.keyMap = "de";
+  console.keyMap = lib.mkForce "de";
 
   # EFI + systemd-boot Setup
   boot.loader.systemd-boot.enable = true;
@@ -85,7 +85,7 @@
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
     shell = pkgs.zsh;
   };
-
+programs.zsh.enable = true;
 
   # Netzwerk & Audio
   networking.networkmanager.enable = true;
