@@ -1,15 +1,36 @@
-{ config, pkgs, hyprland-dotfiles, zen-browser, ... }:
+{ config, pkgs, hyprland-dotfiles, ... }:
 
+let
+  username = "xsnilzx";
+  homeDir = "/home/${username}";
+in
 {
-  home.username = "xsnilzx";
-  home.homeDirectory = "/home/xsnilzx";
+  home.username = username;
+  home.homeDirectory = homeDir;
 
+  home.stateVersion = "24.11";
+
+  # Programme aktivieren
   programs.zsh.enable = true;
+  programs.rofi.enable = true;
+  programs.waybar.enable = true;
+  programs.dunst.enable = true;
+  programs.home-manager.enable = true;
 
+  # Pakete installieren
   home.packages = with pkgs; [
-    # deine Wunschprogramme später hier eintragen
-    ghostty zed-editor flatpak vscodium firefox discord btop eza bat bottom
-    # hyprland stuff
+    ghostty
+    zed-editor
+    flatpak
+    vscodium
+    firefox
+    discord
+    btop
+    eza
+    bat
+    bottom
+
+    # Hyprland Tools
     waybar
     rofi
     dunst
@@ -18,7 +39,7 @@
     cliphist
   ];
 
-  # Ganze Ordner einbinden (inkl. Scripts, Styles usw.)
+  # Ganze Ordner aus hyprland-dotfiles einbinden
   xdg.configFile."hypr".source = "${hyprland-dotfiles}/dotfiles/hypr";
   xdg.configFile."waybar".source = "${hyprland-dotfiles}/dotfiles/waybar";
   xdg.configFile."rofi".source = "${hyprland-dotfiles}/dotfiles/rofi";
@@ -26,11 +47,6 @@
   xdg.configFile."wlogout".source = "${hyprland-dotfiles}/dotfiles/wlogout";
   xdg.configFile."ghostty".source = "${hyprland-dotfiles}/dotfiles/ghostty";
 
-  # Optional: Scripts nach ~/bin oder ~/.local/bin
-  # home.file.".local/bin".source = "${dotfiles}/dotfiles/scripts";
-
-  home.stateVersion = "24.11";
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
+  # Optional: falls du Scripts hast
+  # home.file.".local/bin".source = "${hyprland-dotfiles}/dotfiles/scripts";
 }
