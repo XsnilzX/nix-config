@@ -37,9 +37,9 @@
           nixos-hardware.nixosModules.common-gpu-amd
           home-manager.nixosModules.home-manager
           {
-            inputs.home-manager.useGlobalPkgs = true;
-            inputs.home-manager.useUserPackages = true;
-            #inputs.home-manager.users.xsnilzx = import ./users/xsnilzx.nix;
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            #home-manager.users.xsnilzx = import ./users/xsnilzx.nix;
           }
 
           # Aktiviert unfreie Software systemweit
