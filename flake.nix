@@ -1,11 +1,8 @@
 {
   description = "NixOS configuration with Hyprland + LUKS for Yoga Pro 7";
 
-  # zentrale Versionsvariable
-  nixosVersion = "nixos-24.11";
-
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/${nixosVersion}";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
