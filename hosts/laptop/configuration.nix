@@ -1,4 +1,4 @@
-{ config, pkgs, lib, hyprland-dotfiles, zen-browser, ... }:
+{ config, pkgs, lib, zen-browser, ... }:
 
 {
   # Initiale Kernelmodule für das Initramfs
@@ -79,12 +79,16 @@
   services.xserver.displayManager.sessionPackages = [ pkgs.hyprland ];
 
   # Benutzerkonfiguration
-  home-manager.users.xsnilzx = import ../../users/xsnilzx.nix;
-  programs.zsh.enable = true;
   users.users.xsnilzx = {
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "video" "audio" "input" ];
-    shell = pkgs.zsh;
+  };
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      xsnilzx = import ../../users/xsnilzx.nix;
+    };
+
   };
 
   # Netzwerk & Audio
@@ -140,7 +144,7 @@
 
   # Nützliche Tools
   environment.systemPackages = with pkgs; [
-    nano git neovim zsh wget curl neofetch tlp btrfs-progs
+    nano neovim zsh wget curl neofetch tlp btrfs-progs
     # Hyprland-Tools
     #hyprland-protocols
     hypridle

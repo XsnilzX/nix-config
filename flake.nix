@@ -7,7 +7,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # Hyprland dotfiles
     hyprland-dotfiles = {
         url = "github:XsnilzX/hyprland-dotfiles";
@@ -22,6 +22,7 @@
   outputs = { self, nixpkgs, home-manager, nixos-hardware, hyprland-dotfiles, zen-browser, ... }:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in {
       nixosConfigurations.laptop = nixpkgs.lib.nixosSystem {
         inherit system;
@@ -36,9 +37,9 @@
           nixos-hardware.nixosModules.common-gpu-amd
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.xsnilzx = import ./users/xsnilzx.nix;
+            inputs.home-manager.useGlobalPkgs = true;
+            inputs.home-manager.useUserPackages = true;
+            inputs.home-manager.users.xsnilzx = import ./users/xsnilzx.nix;
           }
 
           # Aktiviert unfreie Software systemweit

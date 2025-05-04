@@ -1,4 +1,4 @@
-{ config, pkgs, hyprland-dotfiles, ... }:
+{ config, pkgs, ... }:
 
 let
   username = "xsnilzx";
@@ -11,36 +11,54 @@ in
   home.stateVersion = "24.11";
 
   # Programme aktivieren
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "zsh-autosuggestions" ];
+      theme = "xiong-chiamiov-plus";
+    };
+    shellAliases = {
+      ls = "eza";
+      cat = "bat";
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    # Additional configuration options can be added here
+    user = {
+      email = "richard.hans.taesler@stud.uni-hannover.de";
+      name = "Richard Taesler";
+    };
+  };
+
   #programs.rofi.enable = true;
   #programs.waybar.enable = true;
   #programs.dunst.enable = true;
-  #programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 
   # Pakete installieren
   home.packages = with pkgs; [
     ghostty
     zed-editor
-    flatpak
     vscodium
     firefox
     discord
     btop
     eza
     bat
-    bottom
 
     # Hyprland Tools
     waybar
-    rofi
+    walker
     dunst
     hyprpaper
     wlogout
     cliphist
   ];
 
-
-  # Ganze Ordner aus hyprland-dotfiles einbinden
+  # Ganze Ordner aus hyprland-dotfiles einbinden Geht gerade nicht
   #xdg.configFile."hypr".source = "${hyprland-dotfiles}/dotfiles/hypr";
   #xdg.configFile."waybar".source = "${hyprland-dotfiles}/dotfiles/waybar";
   #xdg.configFile."rofi".source = "${hyprland-dotfiles}/dotfiles/rofi";
