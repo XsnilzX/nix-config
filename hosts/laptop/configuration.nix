@@ -3,6 +3,8 @@
 let
   cryptroot = "/dev/mapper/cryptroot";
   cryptswap = "/dev/mapper/cryptswap";
+
+  pkgs-unstable = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   imports = [
@@ -84,7 +86,19 @@ in
   # Grafische Oberfläche: Hyprland + SDDM
   services.xserver.enable = true;
   services.libinput.enable = true; # Touchpad & Eingabegeräte (empfohlen für Laptops)
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  }
+
+  hardware.opengl = {
+    package = pkgs-unstable.mesa.drivers;
+
+    # if you also want 32-bit support (e.g for Steam)
+    driSupport32Bit = true;
+    package32 = pkgs-unstable.pkgsi686Linux.mesa.drivers;
+    };
   services.displayManager.sddm.enable = true;
   services.displayManager.defaultSession = "hyprland";
   services.displayManager.sessionPackages = [ pkgs.hyprland ];

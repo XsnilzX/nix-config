@@ -1,0 +1,104 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 34,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/separator",
+    "hyprland/window",
+  ],
+  "modules-center": ["clock", "custom/weather"],
+  "modules-right": [
+    "cpu",
+    "memory",
+    // "temperature",
+    "battery",
+    "backlight",
+    "pulseaudio",
+    "custom/powerprofile",
+    "custom/clipboard",
+    "custom/separator",
+    "tray",
+    "custom/exit",
+  ],
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip": false,
+  },
+  "cpu": {
+    "format": " {usage}%",
+  },
+  "memory": {
+    "format": " {used:0.1f}GB",
+  },
+  "temperature": {
+    "format": " {temperatureC}°C",
+    "thermal-zone": 0,
+    "intervall": 10,
+    "tooltip": false,
+  },
+  "battery": {
+    "format": "  {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+  },
+  "backlight": {
+    "format": " {percent}%",
+  },
+  "custom/weather": {
+    "exec": "/home/richard/.config/waybar/scripts/weather.py",
+    "return-type": "json",
+    "interval": 120, // alle 2 Minuten aktualisieren
+    "format": "{}",
+    "tooltip": true,
+  },
+  "pulseaudio": {
+    "format": "{icon}   {volume}%",
+    "format-bluetooth": "{volume}%  {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": "📱 ",
+      "portable": "📱 ",
+      "car": "🚗 ",
+      "default": [" ", " ", " "],
+    },
+    "on-click": "pavucontrol",
+  },
+  "tray": {
+    "spacing": 5,
+    "icon-size": 20,
+    "items": ["nm-applet", "blueman-applet"],
+  },
+  "custom/separator": {
+    "format": "|",
+    "tooltip": false,
+  },
+  "custom/exit": {
+    "format": "⏻", // oder ein anderes Symbol Ihrer Wahl
+    "on-click": "wlogout",
+    "tooltip-format": "Power Menu",
+  },
+  "custom/powerprofile": {
+    "format": "{}",
+    "exec": "/home/richard/.config/waybar/scripts/powerprofile.sh",
+    "on-click": "powerprofilesctl set balanced",
+    "on-click-right": "powerprofilesctl set power-saver",
+    "on-click-middle": "powerprofilesctl set performance",
+    "tooltip": true,
+    "tooltip-format": "{}",
+    "interval": 5,
+  },
+  "custom/clipboard": {
+    "exec": "/home/richard/.config/waybar/scripts/cliphist-tray.py",
+    "on-click": "/home/richard/.config/waybar/scripts/cliphist-tray.py --click",
+    "tooltip": true,
+    "return-type": "json",
+    "interval": 5,
+  },
+}
