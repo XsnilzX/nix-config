@@ -1,4 +1,4 @@
-{ config, pkgs, lib, zen-browser, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 
 let
   cryptroot = "/dev/mapper/cryptroot";
@@ -90,7 +90,7 @@ in
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  }
+  };
 
   hardware.opengl = {
     package = pkgs-unstable.mesa.drivers;
@@ -178,6 +178,9 @@ in
     #hyprland-protocols
     hypridle
   ];
+
+  # Enable non free Software
+  nixpkgs.config.allowUnfree = true;
 
   # Flatpak + Flathub Setup
   services.flatpak.enable = true;

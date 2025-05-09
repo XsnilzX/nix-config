@@ -47,11 +47,6 @@
           nixos-hardware.nixosModules.common-gpu-amd
           inputs.home-manager.nixosModules.default
           inputs.walker.homeManagerModules.default
-
-          # Aktiviert unfreie Software systemweit
-          ({ config, ... }: {
-            nixpkgs.config.allowUnfree = true;
-          })
         ];
       };
     };
