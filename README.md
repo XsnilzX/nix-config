@@ -25,6 +25,7 @@ Dies ist meine persönliche NixOS-Konfiguration für meinen Laptop. Sie basiert 
 ```bash
 git clone https://github.com/XsnilzX/nixconfig.git
 cd nixconfig
+# change kernel params: "pcie_aspm=powersave" "amdgpu"
 nixos-install --root /mnt --no-root-passwd --flake .#laptop
 nixos-enter --root /mnt -c 'passwd xsnilzx'
 ```

@@ -19,6 +19,10 @@
         inputs.nixpkgs.follows = "nixpkgs";
     };
     walker.url = "github:abenz1267/walker";
+    auto-cpufreq = {
+        url = "github:AdnanHodzic/auto-cpufreq";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
@@ -32,7 +36,7 @@
     ];
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, zen-browser, walker, ... }@inputs:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, zen-browser, walker, auto-cpufreq, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -47,6 +51,7 @@
           nixos-hardware.nixosModules.common-gpu-amd
           inputs.home-manager.nixosModules.default
           inputs.walker.homeManagerModules.default
+          auto-cpufreq.nixosModules.default
         ];
       };
     };

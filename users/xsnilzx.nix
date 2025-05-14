@@ -52,6 +52,14 @@ in
     userName = "Richard Taesler";
   };
 
+  # Steam
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfer
+  };
+
   #programs.rofi.enable = true;
   #programs.waybar.enable = true;
   #programs.dunst.enable = true;
@@ -69,6 +77,7 @@ in
     eza
     bat
     seafile-client
+    steam
 
     # Hyprland Tools
     walker
