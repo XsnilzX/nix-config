@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    disko.url = "github:nix-community/disko";
+    flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +38,7 @@
     ];
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, zen-browser, walker, auto-cpufreq, ... }:
+  outputs = inputs@{ self, nixpkgs, home-manager, nixos-hardware, zen-browser, walker, auto-cpufreq, disko, flake-utils, ... }:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -47,6 +49,8 @@
 
         modules = [
           ./hosts/laptop/configuration.nix
+          ./hosts/laptop/disko.nix
+          disko.nixosModules.disko
           nixos-hardware.nixosModules.common-cpu-amd
           nixos-hardware.nixosModules.common-gpu-amd
           inputs.home-manager.nixosModules.default
