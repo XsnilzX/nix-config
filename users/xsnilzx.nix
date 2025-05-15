@@ -32,15 +32,15 @@ in
   # Programme aktivieren
   programs.zsh = {
     enable = true;
-    #ohMyZsh = {
-    #  enable = true;
-    #  plugins = [ "git" ];
-    #  theme = "xiong-chiamiov-plus";
-    #};
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "git-auto-fetch" ];
+      theme = "xiong-chiamiov-plus";
+    };
     shellAliases = {
-      ls = "eza";
+      ls = "eza --color=always --icons=always --hyperlink -a";
       cat = "bat";
-      ll = "ls -l";
+      ll = "ls -la";
       gs = "git status";
     };
   };
