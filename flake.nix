@@ -10,7 +10,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    inputs.hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland";
     # Hyprland dotfiles
     #hyprland-dotfiles = {
     #    url = "github:XsnilzX/hyprland-dotfiles";
